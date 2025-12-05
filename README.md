@@ -1,6 +1,13 @@
-# Welcome to your Expo app 👋
+# Simple Chat Final
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Aplikasi chat sederhana berbasis Expo dengan integrasi Firebase untuk autentikasi dan real-time messaging.
+
+## 🔐 Kredensial Login
+
+Untuk testing, Anda dapat menggunakan kredensial berikut:
+
+- **Email**: `abah@gmail.com`
+- **Password**: `12345678`
 
 ## Get started
 
