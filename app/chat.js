@@ -39,7 +39,7 @@ export default function ChatScreen() {
         const parsedUser = JSON.parse(savedUser);
         setUser(parsedUser);
 
-        // load history chat
+        // load history chat (global group chat di perangkat ini)
         const savedMessages = await AsyncStorage.getItem('messages');
         if (savedMessages) {
           setMessages(JSON.parse(savedMessages));
@@ -74,7 +74,7 @@ export default function ChatScreen() {
       id: Date.now().toString(),
       text: input,
       image: null,
-      sender: user?.username,
+      sender: user?.email,
       createdAt: new Date().toISOString(),
     };
 
@@ -104,7 +104,7 @@ export default function ChatScreen() {
         id: Date.now().toString(),
         text: '',
         image: imageUri,
-        sender: user?.username,
+        sender: user?.email,
         createdAt: new Date().toISOString(),
       };
 
@@ -130,7 +130,7 @@ export default function ChatScreen() {
             <View>
               <Text style={styles.headerTitle}>Simple Chat</Text>
               <Text style={styles.headerSub}>
-                Login sebagai: {user?.username}
+                Login sebagai: {user?.email}
               </Text>
             </View>
 
@@ -147,7 +147,7 @@ export default function ChatScreen() {
             renderItem={({ item }) => (
               <MessageBubble
                 message={item}
-                isOwn={item.sender === user?.username}
+                isOwn={item.sender === user?.email}
               />
             )}
             inverted={true} // supaya pesan terbaru di bawah
